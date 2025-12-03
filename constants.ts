@@ -122,6 +122,21 @@ export const MOCK_PRODUCTS: Product[] = [
     rating: 5.0,
     reviewsCount: 2,
     stock: 2
+  },
+  {
+    id: '9',
+    name: 'iPad 11 (128GB)',
+    category: 'iPad',
+    price: 3299.00,
+    originalPrice: 4200.00,
+    condition: 'Novo',
+    image: 'https://i.imgur.com/f7rJDqy.png',
+    images: ['https://i.imgur.com/f7rJDqy.png'],
+    specs: { storage: '128GB', screen: '10.9"', chip: 'A15 Bionic' },
+    description: 'Versatilidade, potência e design tudo em um só lugar. Ideal para trabalhar e criar.',
+    rating: 4.9,
+    reviewsCount: 15,
+    stock: 8
   }
 ];
 
