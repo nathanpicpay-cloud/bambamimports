@@ -95,7 +95,7 @@ export const MOCK_PRODUCTS: Product[] = [
   },
   {
     id: '7',
-    name: 'iPhone 16 Pro Max',
+    name: 'iPhone 17 Pro Max',
     category: 'iPhone',
     price: 9199.00,
     originalPrice: 10500.00,
@@ -110,7 +110,7 @@ export const MOCK_PRODUCTS: Product[] = [
   },
   {
     id: '8',
-    name: 'iPhone 16 Pro Max (512GB)',
+    name: 'iPhone 17 Pro Max (512GB)',
     category: 'iPhone',
     price: 11499.00,
     originalPrice: 12500.00,
