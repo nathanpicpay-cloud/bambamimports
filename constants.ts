@@ -137,6 +137,21 @@ export const MOCK_PRODUCTS: Product[] = [
     rating: 4.9,
     reviewsCount: 15,
     stock: 8
+  },
+  {
+    id: '10',
+    name: 'Apple Watch Ultra 2',
+    category: 'Watch',
+    price: 6299.00,
+    originalPrice: 7500.00,
+    condition: 'Novo',
+    image: 'https://i.imgur.com/nInQCxb.png',
+    images: ['https://i.imgur.com/nInQCxb.png'],
+    specs: { storage: '64GB', screen: '49mm', chip: 'S9 SiP' },
+    description: 'O Apple Watch mais robusto e capaz. Caixa de titânio e GPS de precisão.',
+    rating: 5.0,
+    reviewsCount: 10,
+    stock: 5
   }
 ];
 
