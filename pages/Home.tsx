@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ShieldCheck, Truck, Headphones, Smartphone, Star, Zap } from 'lucide-react';
-import { Button, ProductCard } from '../components/UI';
+import { Button, ProductCard, ProductCarousel } from '../components/UI';
 import { MOCK_PRODUCTS, REVIEWS } from '../constants';
 
 export const Home: React.FC = () => {
-  const featuredProducts = MOCK_PRODUCTS.slice(0, 4);
+  // Use all products for the carousel
+  const featuredProducts = MOCK_PRODUCTS;
 
   return (
     <div className="flex flex-col gap-0 pb-20 overflow-hidden w-full">
@@ -74,7 +75,7 @@ export const Home: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-tr from-brand-500/20 to-amber-900/20 rounded-full blur-3xl transform -translate-y-12 scale-90"></div>
               <img 
                 src="https://i.imgur.com/FPG7dVS.png" 
-                alt="iPhone 15 Pro Max" 
+                alt="iPhone" 
                 className="relative z-10 w-3/4 md:w-full max-w-lg mx-auto drop-shadow-2xl hover:scale-105 transition-transform duration-700 animate-float rounded-3xl"
                 style={{ animation: 'float 6s ease-in-out infinite' }}
               />
@@ -148,21 +149,26 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Featured Products */}
+      {/* Featured Products Carousel */}
       <section className="bg-slate-900/50 py-16 md:py-24 relative">
         {/* Background Elements */}
         <div className="absolute top-0 right-0 w-full md:w-1/2 h-full bg-slate-900/50 -z-10 rounded-none md:rounded-l-[4rem]"></div>
         
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-          <div className="mb-10 md:mb-12">
-            <span className="text-brand-400 font-bold uppercase tracking-widest text-xs">Oportunidades</span>
-            <h2 className="text-3xl md:text-4xl font-black text-white mt-2">Destaques da Semana</h2>
+          <div className="mb-10 md:mb-12 flex items-end justify-between">
+            <div>
+              <span className="text-brand-400 font-bold uppercase tracking-widest text-xs">Oportunidades</span>
+              <h2 className="text-3xl md:text-4xl font-black text-white mt-2">Destaques da Semana</h2>
+            </div>
+            {/* Arrows instruction for mobile could go here */}
+            <div className="hidden md:block">
+              <span className="text-xs text-slate-500">Deslize para ver mais</span>
+            </div>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            {featuredProducts.map(product => (
-              <ProductCard key={product.id} product={product} />
-            ))}
+          {/* CAROUSEL REPLACING GRID */}
+          <div className="-mx-4 md:mx-0">
+            <ProductCarousel products={featuredProducts} />
           </div>
 
           <div className="mt-12 md:mt-16 text-center">
