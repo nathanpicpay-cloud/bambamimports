@@ -70,7 +70,7 @@ export const ProductCard: React.FC<{ product: Product, className?: string }> = (
   };
 
   return (
-    <Link to={`/produto/${product.id}`} className={`group relative flex flex-col h-full animate-fade-in-up ${className}`}>
+    <Link to={`/produto/${product.id}`} className={`group relative flex flex-col h-full ${className}`}>
       {/* Card Container */}
       <div className="flex-1 bg-slate-900/40 backdrop-blur-xl border border-white/5 rounded-[2rem] p-6 transition-all duration-500 hover:shadow-2xl hover:shadow-brand-500/5 hover:border-brand-500/30 hover:-translate-y-2 relative overflow-hidden">
         
@@ -142,52 +142,33 @@ export const ProductCard: React.FC<{ product: Product, className?: string }> = (
   );
 };
 
-// --- Product Carousel ---
+// --- Product Carousel (Marquee) ---
 export const ProductCarousel: React.FC<{ products: Product[] }> = ({ products }) => {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  const scroll = (direction: 'left' | 'right') => {
-    if (containerRef.current) {
-      const scrollAmount = 320; // Aproximadamente a largura de um card + gap
-      const newScrollLeft = direction === 'left' 
-        ? containerRef.current.scrollLeft - scrollAmount 
-        : containerRef.current.scrollLeft + scrollAmount;
-      
-      containerRef.current.scrollTo({
-        left: newScrollLeft,
-        behavior: 'smooth'
-      });
-    }
-  };
-
   return (
-    <div className="relative group">
-      {/* Scroll Buttons - Hidden on Mobile */}
-      <button 
-        onClick={() => scroll('left')}
-        className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-5 z-20 w-12 h-12 bg-slate-900/80 backdrop-blur-md border border-white/10 rounded-full items-center justify-center text-white hover:bg-brand-500 hover:text-black transition-all shadow-xl disabled:opacity-50"
-      >
-        <ChevronLeft className="w-6 h-6" />
-      </button>
-      
-      <button 
-        onClick={() => scroll('right')}
-        className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-5 z-20 w-12 h-12 bg-slate-900/80 backdrop-blur-md border border-white/10 rounded-full items-center justify-center text-white hover:bg-brand-500 hover:text-black transition-all shadow-xl"
-      >
-        <ChevronRight className="w-6 h-6" />
-      </button>
+    <div className="relative w-full overflow-hidden group">
+      {/* Gradient Masks */}
+      <div className="absolute top-0 left-0 w-8 md:w-32 h-full bg-gradient-to-r from-slate-950 to-transparent z-10"></div>
+      <div className="absolute top-0 right-0 w-8 md:w-32 h-full bg-gradient-to-l from-slate-950 to-transparent z-10"></div>
 
-      {/* Carousel Container */}
-      <div 
-        ref={containerRef}
-        className="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory scrollbar-hide px-4 md:px-0"
-        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-      >
-        {products.map((product) => (
-          <div key={product.id} className="min-w-[280px] md:min-w-[320px] snap-center">
-            <ProductCard product={product} />
-          </div>
-        ))}
+      {/* Marquee Container */}
+      <div className="flex w-max animate-marquee hover:[animation-play-state:paused]">
+        {/* First Loop */}
+        <div className="flex gap-6 px-3">
+          {products.map((product) => (
+            <div key={`orig-${product.id}`} className="w-[280px] md:w-[320px] flex-shrink-0">
+              <ProductCard product={product} />
+            </div>
+          ))}
+        </div>
+        
+        {/* Second Loop (for seamless infinite effect) */}
+        <div className="flex gap-6 px-3">
+          {products.map((product) => (
+            <div key={`dupe-${product.id}`} className="w-[280px] md:w-[320px] flex-shrink-0">
+              <ProductCard product={product} />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

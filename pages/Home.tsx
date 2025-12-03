@@ -130,7 +130,7 @@ export const Home: React.FC = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 h-auto md:h-[500px]">
           {[
             { name: "iPhone", img: "https://i.imgur.com/ay6sDRd.png", col: "col-span-2 md:col-span-2 row-span-2 md:row-span-1", bg: "from-slate-950/90" },
-            { name: "MacBook", img: "https://picsum.photos/seed/catmac/400/400", col: "col-span-2 md:col-span-1", bg: "from-slate-950/80" },
+            { name: "Acessórios", img: "https://images.unsplash.com/photo-1621330383788-6d4367919530?auto=format&fit=crop&q=80&w=400", col: "col-span-2 md:col-span-1", bg: "from-slate-950/80" },
             { name: "Watch", img: "https://i.imgur.com/nInQCxb.png", col: "col-span-1 md:col-span-1 md:row-span-1", bg: "from-slate-950/80" },
             { name: "iPad", img: "https://i.imgur.com/f7rJDqy.png", col: "col-span-1 md:col-span-1 md:row-span-1", bg: "from-slate-950/80" },
           ].map((cat, idx) => (
@@ -150,7 +150,7 @@ export const Home: React.FC = () => {
       </section>
 
       {/* Featured Products Carousel */}
-      <section className="bg-slate-900/50 py-16 md:py-24 relative">
+      <section className="bg-slate-900/50 py-16 md:py-24 relative overflow-hidden">
         {/* Background Elements */}
         <div className="absolute top-0 right-0 w-full md:w-1/2 h-full bg-slate-900/50 -z-10 rounded-none md:rounded-l-[4rem]"></div>
         
@@ -165,19 +165,19 @@ export const Home: React.FC = () => {
               <span className="text-xs text-slate-500">Deslize para ver mais</span>
             </div>
           </div>
-          
-          {/* CAROUSEL REPLACING GRID */}
-          <div className="-mx-4 md:mx-0">
-            <ProductCarousel products={featuredProducts} />
-          </div>
+        </div>
+        
+        {/* CAROUSEL REPLACING GRID - Full Width Marquee */}
+        <div className="w-full">
+          <ProductCarousel products={featuredProducts} />
+        </div>
 
-          <div className="mt-12 md:mt-16 text-center">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 mt-12 md:mt-16 text-center">
             <Link to="/loja" className="block sm:inline-block">
               <Button variant="outline" size="lg" className="w-full sm:w-auto rounded-full px-10 hover:border-brand-500 hover:text-brand-400">
                 Ver todos os produtos
               </Button>
             </Link>
-          </div>
         </div>
       </section>
 
