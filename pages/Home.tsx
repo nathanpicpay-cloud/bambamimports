@@ -129,7 +129,7 @@ export const Home: React.FC = () => {
         
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 h-auto md:h-[500px]">
           {[
-            { name: "iPhone", img: "https://picsum.photos/seed/catiphone/400/600", col: "col-span-2 md:col-span-2 row-span-2 md:row-span-1", bg: "from-slate-950/90" },
+            { name: "iPhone", img: "https://i.imgur.com/ay6sDRd.png", col: "col-span-2 md:col-span-2 row-span-2 md:row-span-1", bg: "from-slate-950/90" },
             { name: "MacBook", img: "https://picsum.photos/seed/catmac/400/400", col: "col-span-2 md:col-span-1", bg: "from-slate-950/80" },
             { name: "Watch", img: "https://picsum.photos/seed/catwatch/400/400", col: "col-span-1 md:col-span-1 md:row-span-1", bg: "from-slate-950/80" },
             { name: "iPad", img: "https://i.imgur.com/f7rJDqy.png", col: "col-span-1 md:col-span-1 md:row-span-1", bg: "from-slate-950/80" },
