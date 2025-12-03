@@ -4,111 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BAMBAM IMPORTS | Apple Original</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-            },
-            colors: {
-              brand: {
-                50: '#fffaeb', // Light cream gold
-                100: '#fef0c7',
-                200: '#fde68a',
-                300: '#fcd34d',
-                400: '#fbbf24', // Bright Gold
-                500: '#D4AF37', // METALLIC GOLD (Primary)
-                600: '#B5922B', // Darker Gold
-                700: '#a16207',
-                800: '#854d0e',
-                900: '#422006', // Deep Bronze
-                950: '#020617', // Slate 950 (Keep dark background)
-              }
-            },
-            animation: {
-              'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
-              'blob': 'blob 7s infinite',
-              'shimmer': 'shimmer 2s linear infinite',
-              'float': 'float 6s ease-in-out infinite',
-            },
-            keyframes: {
-              fadeInUp: {
-                '0%': { opacity: '0', transform: 'translateY(20px)' },
-                '100%': { opacity: '1', transform: 'translateY(0)' },
-              },
-              blob: {
-                '0%': { transform: 'translate(0px, 0px) scale(1)' },
-                '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
-                '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
-                '100%': { transform: 'translate(0px, 0px) scale(1)' },
-              },
-              shimmer: {
-                '0%': { backgroundPosition: '-200% 0' },
-                '100%': { backgroundPosition: '200% 0' }
-              },
-              float: {
-                '0%, 100%': { transform: 'translateY(0)' },
-                '50%': { transform: 'translateY(-20px)' },
-              }
-            }
-          }
-        }
-      }
-    </script>
-    <style>
-      body { 
-        font-family: 'Inter', sans-serif; 
-        -webkit-font-smoothing: antialiased; 
-        background-color: #020617; /* Slate 950 */
-        overflow-x: hidden;
-      }
-      
-      /* Smooth Scroll */
-      html {
-        scroll-behavior: smooth;
-      }
-
-      /* Custom Scrollbar */
-      ::-webkit-scrollbar {
-        width: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #0f172a; 
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #334155; 
-        border-radius: 4px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #D4AF37; /* Gold Hover */
-      }
-
-      /* Animation Utility Classes */
-      .animate-delay-100 { animation-delay: 100ms; }
-      .animate-delay-200 { animation-delay: 200ms; }
-      .animate-delay-300 { animation-delay: 300ms; }
-      
-      /* Glass Utilities */
-      .glass {
-        background: rgba(255, 255, 255, 0.05);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-      }
-      
-      .glass-dark {
-        background: rgba(2, 6, 23, 0.7);
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
-        border: 1px solid rgba(255, 255, 255, 0.05);
-      }
-    </style>
   <script type="importmap">
 {
   "imports": {
@@ -123,7 +21,7 @@
 }
 </script>
 </head>
-  <body class="text-slate-100 bg-slate-950 selection:bg-brand-500 selection:text-black">
+  <body class="selection:bg-brand-500 selection:text-black">
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
   </body>

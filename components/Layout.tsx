@@ -28,15 +28,15 @@ export const Layout: React.FC = () => {
       <div className="fixed top-0 left-0 right-0 z-50 flex justify-center p-4">
         <nav className={`w-full max-w-7xl transition-all duration-500 rounded-2xl ${isScrolled ? 'glass-dark shadow-xl shadow-black/40 bg-slate-950/90' : 'bg-transparent'}`}>
           <div className="px-6 lg:px-8">
-            <div className="flex justify-between items-center h-16 md:h-20">
+            <div className="flex justify-between items-center h-16 md:h-24">
               
               {/* Logo */}
               <Link to="/" className="group flex items-center gap-2">
-                 <div className="relative h-12 w-auto transition-transform duration-300 group-hover:scale-105">
+                 <div className="relative h-14 md:h-20 w-auto transition-transform duration-300 group-hover:scale-105 py-2">
                    <img 
-                     src="https://i.imgur.com/ZEaBTkA.png" 
+                     src="https://i.imgur.com/IkXROcj.png" 
                      alt="BAMBAM Imports" 
-                     className="h-full w-auto object-contain drop-shadow-[0_0_10px_rgba(212,175,55,0.3)]"
+                     className="h-full w-auto object-contain drop-shadow-[0_0_15px_rgba(212,175,55,0.4)]"
                    />
                  </div>
               </Link>
@@ -192,7 +192,7 @@ export const Layout: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
             <div className="md:col-span-4 space-y-6">
                <div className="flex items-center gap-2">
-                 <img src="https://i.imgur.com/ZEaBTkA.png" alt="BAMBAM" className="h-8 w-auto opacity-90" />
+                 <img src="https://i.imgur.com/IkXROcj.png" alt="BAMBAM" className="h-12 w-auto opacity-90 drop-shadow-[0_0_10px_rgba(212,175,55,0.2)]" />
                </div>
               <p className="text-slate-400 leading-relaxed text-sm max-w-sm">
                 Sua referência em produtos Apple e assistência técnica na Bahia. Tecnologia de ponta, garantia real e o suporte que você merece.
