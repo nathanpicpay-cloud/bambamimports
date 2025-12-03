@@ -73,9 +73,9 @@ export const Home: React.FC = () => {
             <div className="relative animate-fade-in-up animate-delay-200 order-1 lg:order-2">
               <div className="absolute inset-0 bg-gradient-to-tr from-brand-500/20 to-amber-900/20 rounded-full blur-3xl transform -translate-y-12 scale-90"></div>
               <img 
-                src="https://picsum.photos/seed/iphonehero/800/800" 
+                src="https://i.imgur.com/FPG7dVS.png" 
                 alt="iPhone 15 Pro Max" 
-                className="relative z-10 w-3/4 md:w-full max-w-lg mx-auto drop-shadow-2xl hover:scale-105 transition-transform duration-700 animate-float"
+                className="relative z-10 w-3/4 md:w-full max-w-lg mx-auto drop-shadow-2xl hover:scale-105 transition-transform duration-700 animate-float rounded-3xl"
                 style={{ animation: 'float 6s ease-in-out infinite' }}
               />
               {/* Floating Cards Element - Hidden on mobile to save space, visible on tablet+ */}
