@@ -12,7 +12,7 @@ export const Checkout: React.FC = () => {
   if (items.length === 0 && step === 1) {
     return (
       <div className="min-h-[60vh] flex flex-col items-center justify-center p-6 animate-fade-in-up">
-        <h2 className="text-3xl font-bold text-white mb-6">Seu carrinho está vazio</h2>
+        <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 text-center">Seu carrinho está vazio</h2>
         <Link to="/loja">
           <Button size="lg">Explorar Produtos</Button>
         </Link>
@@ -38,8 +38,8 @@ export const Checkout: React.FC = () => {
               <CheckCircle className="w-12 h-12 text-white" />
            </div>
         </div>
-        <h1 className="text-4xl font-black text-white mb-4 tracking-tight">Pedido Confirmado!</h1>
-        <p className="text-slate-400 mb-10 max-w-md text-lg leading-relaxed">
+        <h1 className="text-3xl md:text-4xl font-black text-white mb-4 tracking-tight">Pedido Confirmado!</h1>
+        <p className="text-slate-400 mb-10 max-w-md text-base md:text-lg leading-relaxed">
           Obrigado pela preferência. Enviamos os detalhes do pedido e o código de rastreio para seu WhatsApp e E-mail.
         </p>
         <Link to="/">
@@ -50,39 +50,40 @@ export const Checkout: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen py-12 md:py-20 bg-slate-950">
-      <div className="max-w-4xl mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between mb-10">
-           <h1 className="text-3xl font-black text-white tracking-tight">Checkout Seguro</h1>
+    <div className="min-h-screen py-24 md:py-20 bg-slate-950">
+      <div className="max-w-4xl mx-auto px-4 md:px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-8 md:mb-10 gap-4">
+           <h1 className="text-2xl md:text-3xl font-black text-white tracking-tight">Checkout Seguro</h1>
            <div className="flex items-center gap-2 text-xs font-bold text-green-400 bg-green-500/10 px-3 py-1.5 rounded-full border border-green-500/20">
              <Lock className="w-3 h-3" /> Criptografado
            </div>
         </div>
         
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-6 md:gap-8">
           {/* Main Form */}
-          <div className="md:col-span-2 space-y-8 animate-fade-in-up">
+          <div className="md:col-span-2 space-y-6 md:space-y-8 animate-fade-in-up order-2 md:order-1">
             
             {/* Steps Indicator */}
-            <div className="flex gap-3 mb-8">
+            <div className="flex gap-3 mb-6 md:mb-8">
                <div className={`h-1.5 flex-1 rounded-full transition-all duration-500 ${step >= 1 ? 'bg-brand-500' : 'bg-slate-800'}`} />
                <div className={`h-1.5 flex-1 rounded-full transition-all duration-500 ${step >= 2 ? 'bg-brand-500' : 'bg-slate-800'}`} />
             </div>
 
             {/* Address Form (Simulation) */}
-            <div className="bg-slate-900/50 p-8 rounded-[2rem] shadow-xl shadow-black/20 border border-white/5">
+            <div className="bg-slate-900/50 p-6 md:p-8 rounded-[2rem] shadow-xl shadow-black/20 border border-white/5">
               <h3 className="font-bold text-lg mb-6 text-white">Dados de Entrega</h3>
-              <div className="grid grid-cols-2 gap-5">
-                <input type="text" placeholder="Nome Completo" className="col-span-2 w-full px-5 py-3.5 bg-slate-950/50 rounded-xl border border-slate-700 text-white outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 transition-all placeholder:text-slate-600" />
-                <input type="email" placeholder="Email" className="col-span-2 w-full px-5 py-3.5 bg-slate-950/50 rounded-xl border border-slate-700 text-white outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 transition-all placeholder:text-slate-600" />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+                <input type="text" placeholder="Nome Completo" className="md:col-span-2 w-full px-5 py-3.5 bg-slate-950/50 rounded-xl border border-slate-700 text-white outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 transition-all placeholder:text-slate-600" />
+                <input type="email" placeholder="Email" className="md:col-span-2 w-full px-5 py-3.5 bg-slate-950/50 rounded-xl border border-slate-700 text-white outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 transition-all placeholder:text-slate-600" />
+                {/* On mobile, these inputs stack. On Desktop they are side by side */}
                 <input type="text" placeholder="CEP" className="w-full px-5 py-3.5 bg-slate-950/50 rounded-xl border border-slate-700 text-white outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 transition-all placeholder:text-slate-600" />
                 <input type="text" placeholder="Cidade" className="w-full px-5 py-3.5 bg-slate-950/50 rounded-xl border border-slate-700 text-white outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 transition-all placeholder:text-slate-600" />
-                <input type="text" placeholder="Endereço Completo" className="col-span-2 w-full px-5 py-3.5 bg-slate-950/50 rounded-xl border border-slate-700 text-white outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 transition-all placeholder:text-slate-600" />
+                <input type="text" placeholder="Endereço Completo" className="md:col-span-2 w-full px-5 py-3.5 bg-slate-950/50 rounded-xl border border-slate-700 text-white outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 transition-all placeholder:text-slate-600" />
               </div>
             </div>
 
             {/* Payment Method */}
-            <div className="bg-slate-900/50 p-8 rounded-[2rem] shadow-xl shadow-black/20 border border-white/5">
+            <div className="bg-slate-900/50 p-6 md:p-8 rounded-[2rem] shadow-xl shadow-black/20 border border-white/5">
               <h3 className="font-bold text-lg mb-6 text-white">Pagamento</h3>
               <div className="space-y-4">
                 <label className="flex items-center p-5 border-2 border-brand-500 bg-brand-900/10 rounded-2xl cursor-pointer relative overflow-hidden transition-all">
@@ -105,14 +106,14 @@ export const Checkout: React.FC = () => {
           </div>
 
           {/* Order Summary */}
-          <div className="md:col-span-1 animate-fade-in-up animate-delay-200">
-            <div className="bg-slate-900/50 p-8 rounded-[2rem] shadow-xl shadow-black/20 border border-white/5 sticky top-32">
+          <div className="md:col-span-1 animate-fade-in-up animate-delay-200 order-1 md:order-2">
+            <div className="bg-slate-900/50 p-6 md:p-8 rounded-[2rem] shadow-xl shadow-black/20 border border-white/5 sticky top-24 md:top-32">
               <h3 className="font-bold text-lg mb-6 text-white">Resumo do Pedido</h3>
               <div className="space-y-4 mb-8">
                 {items.map(item => (
                   <div key={item.id} className="flex gap-4">
                     <div className="w-12 h-12 rounded-lg bg-white/5 border border-white/5 p-1 flex-shrink-0">
-                       <img src={item.image} className="w-full h-full object-contain" />
+                       <img src={item.image} className="w-full h-full object-contain" alt={item.name} />
                     </div>
                     <div className="flex-1 min-w-0">
                       <p className="text-sm font-bold text-white truncate">{item.name}</p>

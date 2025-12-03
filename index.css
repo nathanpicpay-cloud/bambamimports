@@ -5,11 +5,19 @@
 @layer base {
   body {
     @apply bg-slate-950 text-slate-100 antialiased font-sans;
+    /* Previne rolagem horizontal causada por animações e blobs */
     overflow-x: hidden;
+    width: 100%;
   }
   
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+  
+  #root {
+    overflow-x: hidden;
+    width: 100%;
   }
 }
 
