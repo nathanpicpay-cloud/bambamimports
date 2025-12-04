@@ -1,6 +1,6 @@
 import { Product, Service, Review } from './types';
 
-export const CATEGORIES = ['Todos', 'iPhone', 'iPad', 'Watch', 'Acessórios'];
+export const CATEGORIES = ['Todos', 'iPhone', 'iPad', 'Watch'];
 
 export const MOCK_PRODUCTS: Product[] = [
   {

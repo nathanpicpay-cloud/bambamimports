@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ShieldCheck, Truck, Headphones, Smartphone, Star, Zap } from 'lucide-react';
-import { Button, ProductCard, ProductCarousel } from '../components/UI';
+import { Button, ProductCarousel } from '../components/UI';
 import { MOCK_PRODUCTS, REVIEWS } from '../constants';
 
 export const Home: React.FC = () => {
@@ -130,7 +130,6 @@ export const Home: React.FC = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 h-auto md:h-[500px]">
           {[
             { name: "iPhone", img: "https://i.imgur.com/ay6sDRd.png", col: "col-span-2 md:col-span-2 row-span-2 md:row-span-1", bg: "from-slate-950/90" },
-            { name: "Acessórios", img: "https://images.unsplash.com/photo-1621330383788-6d4367919530?auto=format&fit=crop&q=80&w=400", col: "col-span-2 md:col-span-1", bg: "from-slate-950/80" },
             { name: "Watch", img: "https://i.imgur.com/nInQCxb.png", col: "col-span-1 md:col-span-1 md:row-span-1", bg: "from-slate-950/80" },
             { name: "iPad", img: "https://i.imgur.com/f7rJDqy.png", col: "col-span-1 md:col-span-1 md:row-span-1", bg: "from-slate-950/80" },
           ].map((cat, idx) => (
@@ -206,7 +205,7 @@ export const Home: React.FC = () => {
             </div>
             <div className="relative group order-1 md:order-2">
                <div className="absolute inset-0 bg-brand-500 rounded-2xl rotate-6 opacity-10 blur-xl group-hover:rotate-12 transition-transform duration-500"></div>
-               <img src="https://picsum.photos/seed/repair/500/500" alt="Repair" className="relative w-full rounded-2xl shadow-2xl border border-white/10 transform transition-transform duration-500 group-hover:scale-105 group-hover:-rotate-2 opacity-90 hover:opacity-100 grayscale group-hover:grayscale-0" />
+               <img src="https://imgur.com/7ZcLb3r" alt="Repair" className="relative w-full rounded-2xl shadow-2xl border border-white/10 transform transition-transform duration-500 group-hover:scale-105 group-hover:-rotate-2 opacity-90 hover:opacity-100 grayscale group-hover:grayscale-0" />
             </div>
           </div>
         </div>
